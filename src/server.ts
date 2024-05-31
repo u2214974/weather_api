@@ -1,7 +1,7 @@
 import express from "express";
-import weatherRoute from "./routes/weatherRoute.js";
+import movieRouter from "./routes/movieRoute.js"; // Update to import the movie router
 
-// We will create an express app
+// Create an express app
 const app = express();
 
 // The port that the express server will listen on
@@ -9,8 +9,8 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// We define our first route
-app.use("/api/weather", weatherRoute);
+// Define the route for movie data based on genre
+app.use("/api/movies", movieRouter); // Update the base route path
 
 // Start the express server
 app.listen(PORT, () => {

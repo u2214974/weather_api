@@ -9,7 +9,7 @@ export const generateMovieData = (genre:String): MovieData => {
     title: faker.lorem.words(3),
     //release date of the movie 
     releaseDate: faker.date.past(20).toISOString().split('T')[0], // Generating a past date within the last 20 years
-   genre:[genre],
+     genre:[genre],
   
     // movies director name 
     director: `${faker.name.firstName()} ${faker.name.lastName()}`,

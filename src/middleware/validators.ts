@@ -1,4 +1,4 @@
-import { query } from "express-validator";
+import { param  } from "express-validator";
 
 /**
  * Validates the genre query param
@@ -10,7 +10,7 @@ import { query } from "express-validator";
  *  getMovieData
  * );
  */
-export const validateGenre = query("genre")
+export const validateGenre = param("genre")
   // We will use the isString method to check if the genre param is a string
   .isString()
   // Optionally, you can check if the genre is one of the allowed genres

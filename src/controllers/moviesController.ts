@@ -28,7 +28,7 @@ export const getMovieData = async (req: Request, res: Response) => {
     }
 
     // Generate movie data based on the genre
-    const movieData = generateMovieData(genre as string);
+    const movieData = generateMovieData(genre);
 
     // Return the generated movie data as JSON
     res.status(200).json(movieData);

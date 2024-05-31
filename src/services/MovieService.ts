@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { storeMovieData } from "../helpers/helper.js";
 
 
 // a list of movie name since random generation generated wierd names 
@@ -23,7 +24,7 @@ const movieTitles = [
 const getRandomItem = (arr: string[]): string => arr[Math.floor(Math.random() * arr.length)];
 
 // below function generates a fake data for the movie interface based on genre which includes #title # releaseDate #director and #rating
-export const generateMovieData = (genre:String): MovieData => {
+export const generateMovieData = (genre:string): MovieData => {
   // Generate random weather data
   const generatedMovieData = {
     // title of the movies 
@@ -37,6 +38,8 @@ export const generateMovieData = (genre:String): MovieData => {
     // rating of teh moveiw 
     rating: faker.number.float({ min: 0, max: 10, precision: 0.1 }),
   };
+
+  storeMovieData(generatedMovieData).catch(console.error);
   // Return weather data
   return generatedMovieData;
 };

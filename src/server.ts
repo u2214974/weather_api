@@ -1,5 +1,6 @@
 import express from "express";
 import movieRouter from "./routes/movieRoute.js"; // Update to import the movie router
+import cors from "cors"
 
 // Create an express app
 const app = express();
@@ -8,6 +9,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors())
 
 // Define the route for movie data based on genre
 app.use("/api/movies", movieRouter); // Update the base route path

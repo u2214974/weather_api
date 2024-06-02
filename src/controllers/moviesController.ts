@@ -3,7 +3,7 @@ import {generateMovieData} from "../services/MovieService.js";
 import { validationResult } from "express-validator";
 
 /**
- * Gets the weather data for a city
+ * Gets the movie data for a genre
 p0?: stringp0: string * @param req the request object
  * @param res the response object
  */
